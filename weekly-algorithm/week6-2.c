@@ -1,17 +1,23 @@
 #include <stdio.h>
+#include <string.h>
 
-int main(){
-    float a=0; 
-    float b=0;
-    float std[10];
-    for (int i = 0; i < 10; i++){
-        scanf("%f", &std[i]);
-    }
-    for (int i = 0; i < 10; i++)
+int main() {
+    int lower=0,upper=0;
+    char str[50];
+    gets(str);
+
+    // Find upper lower with string.h
+    for (int i = 0; i < strlen(str); i++)
     {
-        b += std[i];    
+        if(str[i] >= 'a' && str[i] <= 'z'){
+            lower++;
+        }else if(str[i] >= 'A' && str[i] <= 'Z'){
+            upper++;
+        }
     }
-    float mean = b / 10;
-    printf("%.2f", mean);
-    return 0; 
+
+    printf("-> %d Upper case\n", upper);
+    printf("-> %d Lower case", lower);
+    
+    return 0;
 }
